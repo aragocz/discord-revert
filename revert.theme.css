@@ -1,0 +1,208 @@
+/**
+ * @name Revert
+ * @author aragocz
+ * @authorId 428984613935775765
+ * @authorLink https://aragocz.com
+ * @version 1.1.0
+ * @description Revert to old discord theme
+ * @source https://github.com/aragocz/discord-revert
+ * @website https://github.com/aragocz/discord-revert
+ * @updateUrl https://raw.githubusercontent.com/aragocz/discord-revert/refs/heads/main/revert.theme.css
+*/
+
+@import url("https://scattagain.github.io/VencordStuff/css/GuildbarRevert.css");
+
+:root {
+    --guildbar-avatar-size: 48px !important;
+    --blob-scale: 48;
+    --guildbar-folder-size: var(--guildbar-avatar-size);
+    --folder-blob-scale: var(--blob-scale);
+    --custom-guild-list-padding: 10px !important;
+}
+
+.visual-refresh.refresh-fast-follow-avatars .panels_c48ade{
+    background-color: #232428 !important;
+    width: calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width)) !important;
+    border-radius: 0px !important;
+    bottom: 0px !important;
+    right: 0px !important;
+    border: 0px;
+	left: auto;
+
+    & > div.panel__5dec7{
+        background-color: #232428 !important;
+    }
+}
+
+.wrapper__44b0c.avatar__37e49 .mask__44b0c.svg__44b0c{
+    padding: 4px 0px 0px 4px;
+    height: 43px;
+    width: 43px;
+}
+
+.text-md\/medium_cf4812{
+    font-size: 14px !important;
+}
+
+.lineClamp1__4bd52.text-sm\/medium_cf4812{
+    font-size: 12px;
+}
+
+button[aria-label="Microphone Settings"]{
+    display: none !important;
+}
+
+.visual-refresh {
+    div.page_c48ade {
+        &:not(:has(> div.chat_f75fb0)) {
+            anchor-name: --vr-header-snippet;
+        }
+
+        & > div.chat_f75fb0 {
+            anchor-name: --vr-header-snippet;
+        }
+    }
+
+    & .micButtonParent__37e49 > button {
+        border-top-right-radius: var(--radius-sm) !important;
+        border-bottom-right-radius: var(--radius-sm) !important;
+    }
+
+    .button_e131a9 {
+        border-radius: 4px !important;
+    }
+
+    div.base_c48ade {
+        grid-template-rows: [top] 0 [titleBarEnd] 22px [noticeEnd] 1fr [end];
+
+        & > div.bar_c38106 {
+            position: absolute;
+            top: 0;
+            right: anchor(right);
+            width: 100%;
+            padding: 0;
+            height: 22px !important;
+            min-height: 12px !important;
+            background-color: #242529 !important;
+        }
+
+        & div.trailing_c38106 {
+            border: none;
+        }
+
+        & a[href="https://support.discord.com"], & .title_c38106, & div.recentsIcon_c99c29{
+            display: none !important;
+        }
+
+        & div.winButtons_c38106.winButtonsWithDivider_c38106 {
+            &::before {
+                display: none;
+            }
+            
+            & div.winButton_c38106 {
+                height: 22px !important
+            }
+        }
+    }
+
+    :not(:has(div.page_c48ade > div.chat_f75fb0)) div.base_c48ade > div.bar_c38106 {
+        right: 0 !important;
+    }
+
+    ul[data-list-id="guildsnav"] > div.itemsContainer_ef3116 {
+        margin-top: 16px;
+    }
+
+    div.topic__6ec1a {
+        -webkit-app-region: no-drag;
+    }
+}
+
+.titleWrapper__9293f > h1.text-md\/medium_cf4812 {
+    font-size: 15px !important;
+}
+
+.wrapper__48112:not(.isExpanded__48112) .folderIcon__48112 div.wrapper_cc5dd2 svg.svg_cc5dd2 > foreignObject {
+    transform: translate(-1px, -3px) !important;
+    & .closedFolderIconWrapper__48112 {
+        transform: translate(-2px, -2px);
+    }
+}
+
+.wrapper__48112.isExpanded__48112 .folderIcon__48112 div.wrapper_cc5dd2 svg.svg_cc5dd2 > foreignObject {
+    transform: translate(-2px, -2px);
+    height: var(--guildbar-avatar-size) !important;
+    width: var(--guildbar-avatar-size) !important;
+    border-radius: var(--radius-round) !important;
+
+    & svg {
+        transform: translate(-1px, -2px);
+    }
+
+    & .folder__48112, & .folder__48112.hover__48112 {
+        height: initial !important;
+        width: initial !important;
+    }
+
+    & .expandedFolderIconWrapper__48112{
+        height: 52px !important;
+        width: 52px !important;
+    }
+}
+
+.visual-refresh nav[class*="guilds_"] [id^="folder-items-"]{
+    --guildbar-avatar-size: 48px !important;
+}
+
+.visual-refresh .guilds_c48ade {
+	margin-bottom: 0;
+}
+.visual-refresh .base_c48ade {
+	grid-template-rows: [top] 1px [titleBarEnd] 2.5% [noticeEnd] 1fr [end];
+}
+
+.container__55c99{
+    background-color: #232428 !important;
+}
+
+.text_b88801{
+    font-size: 12px;
+}
+
+.menu_c1e9c4{
+    background-color: #232428 !important;
+
+    & .label_c1e9c4{
+        color: #dcdcdc;
+    }
+
+    & .labelContainer_c1e9c4 {
+        padding: 6px !important;
+    }
+}
+
+.selectedChannel_c69b6d .linkTop__2ea32{
+    & .name__2ea32, & .iconContainer__2ea32 .icon__2ea32 {
+        color: #dcdcdc !important;
+    }
+}
+
+.wrapper__2ea32:hover .name__2ea32 {
+    color: #dcdcdc !important;
+}
+
+.content_c48ade > .sidebar_c48ade::after{
+    background-color: #232428 !important;
+}
+
+.stack_dbd263.scroller_ef3116.none_d125d2.scrollerBase_d125d2 {
+    top: 1%;
+}
+
+.unreadMentionsIndicatorTop_ef3116{
+    top: 2%;
+}
+
+.discoveryIcon_ef3116{
+    display: none;
+}
