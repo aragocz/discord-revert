@@ -3,7 +3,7 @@
  * @author aragocz
  * @authorId 428984613935775765
  * @authorLink https://aragocz.com
- * @version 1.1.0
+ * @version 1.1.2
  * @description Revert to old discord theme
  * @source https://github.com/aragocz/discord-revert
  * @website https://github.com/aragocz/discord-revert
@@ -13,6 +13,15 @@
 @import url("https://scattagain.github.io/VencordStuff/css/GuildbarRevert.css");
 
 :root {
+    /*Feel free to change*/
+    --background-darker: #232428;
+    --text-lighter: #dcdcdc;
+    --message-hover-mixin: rgba(0, 0, 0, 0.13);
+    
+    /*Change only if you know what you're doing*/
+    --background-message-hover: color-mix(in oklab, var(--background-primary), var(--message-hover-mixin)) !important;
+
+    /*Do NOT change, this will mess up sizes*/
     --guildbar-avatar-size: 48px !important;
     --blob-scale: 48;
     --guildbar-folder-size: var(--guildbar-avatar-size);
@@ -21,7 +30,7 @@
 }
 
 .visual-refresh.refresh-fast-follow-avatars .panels_c48ade{
-    background-color: #232428 !important;
+    background-color: var(--background-darker) !important;
     width: calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width)) !important;
     border-radius: 0px !important;
     bottom: 0px !important;
@@ -30,7 +39,11 @@
 	left: auto;
 
     & > div.panel__5dec7{
-        background-color: #232428 !important;
+        background-color: var(--background-darker) !important;
+    }
+
+    & > .container__37e49{
+        height: 55px !important;
     }
 }
 
@@ -48,21 +61,18 @@
     font-size: 12px;
 }
 
-button[aria-label="Microphone Settings"]{
+/*
+These options are for removing the Voice Changer dropdown list 
+and discovery icon at the bottom of the server list.
+If you want them feel free to remove the following.
+I'm not liable for any misallignments caused by adding them back
+*/
+div.micButtonParent__37e49 > div > button.buttonChevron__37e49, .discoveryIcon_ef3116{
     display: none !important;
 }
+/**/
 
 .visual-refresh {
-    div.page_c48ade {
-        &:not(:has(> div.chat_f75fb0)) {
-            anchor-name: --vr-header-snippet;
-        }
-
-        & > div.chat_f75fb0 {
-            anchor-name: --vr-header-snippet;
-        }
-    }
-
     & .micButtonParent__37e49 > button {
         border-top-right-radius: var(--radius-sm) !important;
         border-bottom-right-radius: var(--radius-sm) !important;
@@ -83,7 +93,7 @@ button[aria-label="Microphone Settings"]{
             padding: 0;
             height: 22px !important;
             min-height: 12px !important;
-            background-color: #242529 !important;
+            background-color: --background-darker !important;
         }
 
         & div.trailing_c38106 {
@@ -119,7 +129,7 @@ button[aria-label="Microphone Settings"]{
 }
 
 .titleWrapper__9293f > h1.text-md\/medium_cf4812 {
-    font-size: 15px !important;
+    font-size: 16px !important;
 }
 
 .wrapper__48112:not(.isExpanded__48112) .folderIcon__48112 div.wrapper_cc5dd2 svg.svg_cc5dd2 > foreignObject {
@@ -162,7 +172,7 @@ button[aria-label="Microphone Settings"]{
 }
 
 .container__55c99{
-    background-color: #232428 !important;
+    background-color: var(--background-darker) !important;
 }
 
 .text_b88801{
@@ -170,10 +180,10 @@ button[aria-label="Microphone Settings"]{
 }
 
 .menu_c1e9c4{
-    background-color: #232428 !important;
+    background-color: var(--background-darker) !important;
 
     & .label_c1e9c4{
-        color: #dcdcdc;
+        color: var(--text-lighter);
     }
 
     & .labelContainer_c1e9c4 {
@@ -183,16 +193,16 @@ button[aria-label="Microphone Settings"]{
 
 .selectedChannel_c69b6d .linkTop__2ea32{
     & .name__2ea32, & .iconContainer__2ea32 .icon__2ea32 {
-        color: #dcdcdc !important;
+        color: var(--text-lighter) !important;
     }
 }
 
 .wrapper__2ea32:hover .name__2ea32 {
-    color: #dcdcdc !important;
+    color: var(--text-lighter) !important;
 }
 
 .content_c48ade > .sidebar_c48ade::after{
-    background-color: #232428 !important;
+    background-color: var(--background-darker) !important;
 }
 
 .stack_dbd263.scroller_ef3116.none_d125d2.scrollerBase_d125d2 {
@@ -203,6 +213,34 @@ button[aria-label="Microphone Settings"]{
     top: 2%;
 }
 
-.discoveryIcon_ef3116{
-    display: none;
+div.members_c8ffbb{
+    background-color: var(--background-base-lowest) !important;
+
+    & .member__5d473 {
+        background-color: var(--background-base-lowest) !important;
+    }
+}
+
+.childWrapper__6e9f8 > .container__1ce5d {
+    border-radius: var(--radius-round) !important;
+    height: 48px !important;
+    width: 48px !important;
+    & > .svg__2338f {
+        height: 48px !important;
+        width: 48px !important;
+    }
+
+    & foreignObject[mask="url(#svg-mask-diagonal-facepile-32)"] {
+        width: 32px !important;
+        height: 32px !important;
+        transform: none !important;
+    }
+}
+
+.wrapper__6e9f8.selected__6e9f8:has(.childWrapper__6e9f8 > .container__1ce5d) > .childWrapper__6e9f8.childWrapperHoverScale__6e9f8{
+    scale: 1.0 !important;
+}
+
+.buttonsInner__5126c.popover_f84418{
+    background-color: var(--background-primary) !important;
 }
