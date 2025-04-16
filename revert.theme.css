@@ -18,6 +18,9 @@
     --text-lighter: #dcdcdc;
     --message-hover-mixin: rgba(0, 0, 0, 0.13);
     --fast-follow-color: #25262a;
+    --scrollbar-auto-thumb: var(--background-darker) !important;
+    --scrollbar-thin-thumb: var(--background-darker) !important;
+    --scrollbar-auto-track: var(--background-base-lowest) !important;
     
     /*Change only if you know what you're doing*/
     --background-message-hover: color-mix(in oklab, var(--background-primary), var(--message-hover-mixin)) !important;
