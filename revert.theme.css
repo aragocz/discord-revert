@@ -3,7 +3,7 @@
  * @author aragocz
  * @authorId 428984613935775765
  * @authorLink https://aragocz.com
- * @version 1.1.2
+ * @version 1.2.0
  * @description Revert to old discord theme
  * @source https://github.com/aragocz/discord-revert
  * @website https://github.com/aragocz/discord-revert
@@ -17,6 +17,7 @@
     --background-darker: #232428;
     --text-lighter: #dcdcdc;
     --message-hover-mixin: rgba(0, 0, 0, 0.13);
+    --fast-follow-color: #25262a;
     
     /*Change only if you know what you're doing*/
     --background-message-hover: color-mix(in oklab, var(--background-primary), var(--message-hover-mixin)) !important;
@@ -29,7 +30,7 @@
     --custom-guild-list-padding: 10px !important;
 }
 
-.visual-refresh.refresh-fast-follow-avatars .panels_c48ade{
+.visual-refresh .panels_c48ade{
     background-color: var(--background-darker) !important;
     width: calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width)) !important;
     border-radius: 0px !important;
@@ -48,9 +49,9 @@
 }
 
 .wrapper__44b0c.avatar__37e49 .mask__44b0c.svg__44b0c{
-    padding: 4px 0px 0px 4px;
-    height: 43px;
-    width: 43px;
+    padding: 2px 0px 0px 2px;
+    height: 44px;
+    width: 44px;
 }
 
 .text-md\/medium_cf4812{
@@ -93,7 +94,6 @@ div.micButtonParent__37e49 > div > button.buttonChevron__37e49, .discoveryIcon_e
             padding: 0;
             height: 22px !important;
             min-height: 12px !important;
-            background-color: --background-darker !important;
         }
 
         & div.trailing_c38106 {
@@ -120,7 +120,7 @@ div.micButtonParent__37e49 > div > button.buttonChevron__37e49, .discoveryIcon_e
     }
 
     ul[data-list-id="guildsnav"] > div.itemsContainer_ef3116 {
-        margin-top: 16px;
+        margin-top: 25px;
     }
 
     div.topic__6ec1a {
@@ -132,32 +132,10 @@ div.micButtonParent__37e49 > div > button.buttonChevron__37e49, .discoveryIcon_e
     font-size: 16px !important;
 }
 
-.wrapper__48112:not(.isExpanded__48112) .folderIcon__48112 div.wrapper_cc5dd2 svg.svg_cc5dd2 > foreignObject {
-    transform: translate(-1px, -3px) !important;
-    & .closedFolderIconWrapper__48112 {
-        transform: translate(-2px, -2px);
-    }
-}
-
 .wrapper__48112.isExpanded__48112 .folderIcon__48112 div.wrapper_cc5dd2 svg.svg_cc5dd2 > foreignObject {
-    transform: translate(-2px, -2px);
     height: var(--guildbar-avatar-size) !important;
     width: var(--guildbar-avatar-size) !important;
     border-radius: var(--radius-round) !important;
-
-    & svg {
-        transform: translate(-1px, -2px);
-    }
-
-    & .folder__48112, & .folder__48112.hover__48112 {
-        height: initial !important;
-        width: initial !important;
-    }
-
-    & .expandedFolderIconWrapper__48112{
-        height: 52px !important;
-        width: 52px !important;
-    }
 }
 
 .visual-refresh nav[class*="guilds_"] [id^="folder-items-"]{
@@ -169,6 +147,7 @@ div.micButtonParent__37e49 > div > button.buttonChevron__37e49, .discoveryIcon_e
 }
 .visual-refresh .base_c48ade {
 	grid-template-rows: [top] 1px [titleBarEnd] 2.5% [noticeEnd] 1fr [end];
+    background-color: var(--fast-follow-color) !important;
 }
 
 .container__55c99{
@@ -205,10 +184,6 @@ div.micButtonParent__37e49 > div > button.buttonChevron__37e49, .discoveryIcon_e
     background-color: var(--background-darker) !important;
 }
 
-.stack_dbd263.scroller_ef3116.none_d125d2.scrollerBase_d125d2 {
-    top: 1%;
-}
-
 .unreadMentionsIndicatorTop_ef3116{
     top: 2%;
 }
@@ -243,4 +218,8 @@ div.members_c8ffbb{
 
 .buttonsInner__5126c.popover_f84418{
     background-color: var(--background-primary) !important;
+}
+
+.tree_ef3116{
+    background-color: var(--fast-follow-color) !important;
 }
