@@ -3,6 +3,12 @@ Discord Revert is a theme I made because I hate the 2025 desktop visual refresh.
 
 Initial code came from [this thread](https://gist.github.com/n1d3v/0a856d98b9adda5dda96c0deae32b4f3).
 
+# Prerequisities
+This theme was made to suit the following:
+- Theme: Ash
+- UI density: Default
+- Message Display: Default
+
 # Installation
 1. Download and install any Discord mod that supports custom CSS (I personally recommend [Vencord](https://vencord.dev))
 2. Download the theme (for Vencord, if you're using a different client, use tutorial applicable to yours)
