@@ -3,7 +3,7 @@
  * @author aragocz
  * @authorId 428984613935775765
  * @authorLink https://aragocz.com
- * @version 1.2.1
+ * @version 1.2.2
  * @description Revert to old discord theme
  * @source https://github.com/aragocz/discord-revert
  * @website https://github.com/aragocz/discord-revert
@@ -19,6 +19,7 @@
     --text-lighter: #dcdcdc;
     --message-hover-mixin: rgba(0, 0, 0, 0.13);
     --fast-follow-color: #25262a;
+    --winButtonColor: #757575;
     --scrollbar-auto-thumb: var(--background-darker) !important;
     --scrollbar-thin-thumb: var(--background-darker) !important;
     --scrollbar-auto-track: var(--background-base-lowest) !important;
@@ -114,7 +115,8 @@ div.micButtonParent__37e49 > div > button.buttonChevron__37e49, .discoveryIcon_e
             }
             
             & div.winButton_c38106 {
-                height: 22px !important
+                height: 22px !important;
+                color: var(--winButtonColor);
             }
         }
     }
@@ -226,4 +228,8 @@ div.members_c8ffbb{
 
 .tree_ef3116{
     background-color: var(--fast-follow-color) !important;
+}
+
+.outer_c0bea0:not(.custom-theme-background){
+    background-color: var(--background-secondary);
 }
