@@ -3,7 +3,7 @@
  * @author aragocz
  * @authorId 428984613935775765
  * @authorLink https://aragocz.com
- * @version 1.3.0
+ * @version 1.3.1
  * @description Revert to old discord theme
  * @source https://github.com/aragocz/discord-revert
  * @website https://github.com/aragocz/discord-revert
@@ -68,15 +68,13 @@
 }
 
 /*
-These options are for removing the Voice Changer dropdown list 
-and discovery icon at the bottom of the server list.
-If you want them feel free to remove the following.
-I'm not liable for any misallignments caused by adding them back
+This option is for removing the Voice Changer dropdown list.
+If you want it feel free to remove the following.
+I'm not liable for any misallignments caused by adding it back.
 */
-div.micButtonParent__37e49 > div > button.buttonChevron__37e49, .discoveryIcon_ef3116{
+div.micButtonParent__37e49 > div > button.buttonChevron__37e49{
     display: none !important;
 }
-/**/
 
 .visual-refresh {
     & .micButtonParent__37e49 > button {
@@ -89,7 +87,7 @@ div.micButtonParent__37e49 > div > button.buttonChevron__37e49, .discoveryIcon_e
     }
 
     div.base_c48ade {
-        grid-template-rows: [top] 0 [titleBarEnd] 22px [noticeEnd] 1fr [end];
+        grid-template-rows: [top] 22px [titleBarEnd] min-content [noticeEnd] 1fr [end];
 
         & > div.bar_c38106 {
             position: absolute;
@@ -125,10 +123,6 @@ div.micButtonParent__37e49 > div > button.buttonChevron__37e49, .discoveryIcon_e
         right: 0 !important;
     }
 
-    ul[data-list-id="guildsnav"] > div.itemsContainer_ef3116 {
-        margin-top: 25px;
-    }
-
     div.topic__6ec1a {
         -webkit-app-region: no-drag;
     }
@@ -159,15 +153,6 @@ div.micButtonParent__37e49 > div > button.buttonChevron__37e49, .discoveryIcon_e
         }
     }
 }
-
-/*.folderGroup__48112 .wrapper_cc5dd2 svg.svg_cc5dd2{
-    > foreignObject{
-        height: var(--guildbar-avatar-size) !important;
-        width: var(--guildbar-avatar-size) !important;
-    }
-    height: var(--guildbar-avatar-size) !important;
-    width: var(--guildbar-avatar-size) !important;
-}*/
 
 .visual-refresh nav[class*="guilds_"] [id^="folder-items-"]{
     --guildbar-avatar-size: 48px !important;
@@ -272,6 +257,16 @@ div.members_c8ffbb{
     transform: translate(8px, 8px) !important;
 }
 
+.folderGroup__48112 .folderHeader__48112 .folderButton__48112{
+    .lowerBadge_cc5dd2{
+        transform: none !important;
+    }
+
+    .wrapper_cc5dd2 mask{
+        --badge-offset: 0 !important;
+    }
+}
+
 .upperBadge_cc5dd2 {
     transform: translate(8px, 0px) !important;
 }
@@ -279,8 +274,23 @@ div.members_c8ffbb{
 .folderPreviewWrapper__48112 {
     .folderPreview__48112 {
         gap: 0px 4px !important;
-        transform:translate(2px, 2px);
+        transform: translate(2px, 2px);
     }
 
     border-radius: var(--radius-md);
+}
+
+.notice__6e2b9 {
+    font-size: 12px;
+    line-height: 28px;
+    button.button__6e2b9{ 
+        font-size: 12px;
+        height: 22px;
+        line-height: 0px;
+        top: 3px;
+    }
+
+    div.closeButton__6e2b9{
+        height: 28px;
+    }
 }
