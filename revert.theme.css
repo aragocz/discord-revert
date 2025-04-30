@@ -3,7 +3,7 @@
  * @author aragocz
  * @authorId 428984613935775765
  * @authorLink https://aragocz.com
- * @version 1.2.2
+ * @version 1.3.0
  * @description Revert to old discord theme
  * @source https://github.com/aragocz/discord-revert
  * @website https://github.com/aragocz/discord-revert
@@ -138,11 +138,36 @@ div.micButtonParent__37e49 > div > button.buttonChevron__37e49, .discoveryIcon_e
     font-size: 16px !important;
 }
 
-.wrapper__48112.isExpanded__48112 .folderIcon__48112 div.wrapper_cc5dd2 svg.svg_cc5dd2 > foreignObject {
+.folderGroup__48112.isExpanded__48112 {
+    .folderGroupBackground__48112 {
+        border-radius: var(--radius-round);
+    }
+
+    .folderIcon__48112 {
+        border-radius: var(--radius-round);
+
+        > svg {
+            scale: 1.3;
+        }
+    }
+    
+    foreignObject div.wrapper_cc5dd2 {
+        svg.svg_cc5dd2, svg.svg_cc5dd2 > foreignObject, svg.svg_cc5dd2 .folderIcon__48112{
+            height: var(--guildbar-avatar-size) !important;
+            width: var(--guildbar-avatar-size) !important;
+            border-radius: var(--radius-round) !important;
+        }
+    }
+}
+
+/*.folderGroup__48112 .wrapper_cc5dd2 svg.svg_cc5dd2{
+    > foreignObject{
+        height: var(--guildbar-avatar-size) !important;
+        width: var(--guildbar-avatar-size) !important;
+    }
     height: var(--guildbar-avatar-size) !important;
     width: var(--guildbar-avatar-size) !important;
-    border-radius: var(--radius-round) !important;
-}
+}*/
 
 .visual-refresh nav[class*="guilds_"] [id^="folder-items-"]{
     --guildbar-avatar-size: 48px !important;
@@ -232,4 +257,30 @@ div.members_c8ffbb{
 
 .outer_c0bea0:not(.custom-theme-background){
     background-color: var(--background-secondary);
+}
+
+.listItem__650eb{
+    height: var(--guildbar-avatar-size);
+
+    > div:not(.pill_e5445c, .wrapper_d144f8, .guildSeparator__252b6){
+        height: var(--guildbar-avatar-size);
+        width: var(--guildbar-avatar-size);
+    }
+}
+
+.lowerBadge_cc5dd2 {
+    transform: translate(8px, 8px) !important;
+}
+
+.upperBadge_cc5dd2 {
+    transform: translate(8px, 0px) !important;
+}
+
+.folderPreviewWrapper__48112 {
+    .folderPreview__48112 {
+        gap: 0px 4px !important;
+        transform:translate(2px, 2px);
+    }
+
+    border-radius: var(--radius-md);
 }
