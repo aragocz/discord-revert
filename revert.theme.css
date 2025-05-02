@@ -15,14 +15,13 @@
 
 :root {
     /*Feel free to change*/
-    --background-darker: #232428;
+    --background-darker: color-mix(in oklab, #1b1c1f, var(--background-base-lowest));
     --text-lighter: #dcdcdc;
     --message-hover-mixin: rgba(0, 0, 0, 0.13);
-    --fast-follow-color: #25262a;
-    --winButtonColor: #757575;
     --scrollbar-auto-thumb: var(--background-darker) !important;
     --scrollbar-thin-thumb: var(--background-darker) !important;
     --scrollbar-auto-track: var(--background-base-lowest) !important;
+    --background-quart: var(--bg-overlay-app-frame, color-mix(in oklab, #1f2023, var(--background-base-lowest)));
     
     /*Change only if you know what you're doing*/
     --background-message-hover: color-mix(in oklab, var(--background-primary), var(--message-hover-mixin)) !important;
@@ -35,23 +34,7 @@
     --custom-guild-list-padding: 10px !important;
 }
 
-.visual-refresh .panels_c48ade{
-    background-color: var(--background-darker) !important;
-    width: calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width)) !important;
-    border-radius: 0px !important;
-    bottom: 0px !important;
-    right: 0px !important;
-    border: 0px;
-	left: auto;
-
-    & > div.panel__5dec7{
-        background-color: var(--background-darker) !important;
-    }
-
-    & > .container__37e49{
-        height: 55px !important;
-    }
-}
+.visual-refresh 
 
 .wrapper__44b0c.avatar__37e49 .mask__44b0c.svg__44b0c{
     padding: 2px 0px 0px 2px;
@@ -88,6 +71,7 @@ div.micButtonParent__37e49 > div > button.buttonChevron__37e49{
 
     div.base_c48ade {
         grid-template-rows: [top] 22px [titleBarEnd] min-content [noticeEnd] 1fr [end];
+        background-color: var(--background-quart);
 
         & > div.bar_c38106 {
             position: absolute;
@@ -114,8 +98,21 @@ div.micButtonParent__37e49 > div > button.buttonChevron__37e49{
             
             & div.winButton_c38106 {
                 height: 22px !important;
-                color: var(--winButtonColor);
             }
+        }
+    }
+
+    .panels_c48ade{
+        background-color: var(--background-darker) !important;
+        width: calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width)) !important;
+        border-radius: 0px !important;
+        bottom: 0px !important;
+        right: 0px !important;
+        border: 0px;
+	    left: auto;
+
+        & > .container__37e49{
+            height: 55px !important;
         }
     }
 
@@ -125,6 +122,14 @@ div.micButtonParent__37e49 > div > button.buttonChevron__37e49{
 
     div.topic__6ec1a {
         -webkit-app-region: no-drag;
+    }
+
+    nav[class*="guilds_"] [id^="folder-items-"]{
+        --guildbar-avatar-size: 48px !important;
+    }
+
+    .guilds_c48ade {
+	    margin-bottom: 0;
     }
 }
 
@@ -154,36 +159,8 @@ div.micButtonParent__37e49 > div > button.buttonChevron__37e49{
     }
 }
 
-.visual-refresh nav[class*="guilds_"] [id^="folder-items-"]{
-    --guildbar-avatar-size: 48px !important;
-}
-
-.visual-refresh .guilds_c48ade {
-	margin-bottom: 0;
-}
-.visual-refresh .base_c48ade {
-	grid-template-rows: [top] 1px [titleBarEnd] 2.5% [noticeEnd] 1fr [end];
-    background-color: var(--fast-follow-color) !important;
-}
-
-.container__55c99{
-    background-color: var(--background-darker) !important;
-}
-
 .text_b88801{
     font-size: 12px;
-}
-
-.menu_c1e9c4{
-    background-color: var(--background-darker) !important;
-
-    & .label_c1e9c4{
-        color: var(--text-lighter);
-    }
-
-    & .labelContainer_c1e9c4 {
-        padding: 6px !important;
-    }
 }
 
 .selectedChannel_c69b6d .linkTop__2ea32{
@@ -237,7 +214,7 @@ div.members_c8ffbb{
 }
 
 .tree_ef3116{
-    background-color: var(--fast-follow-color) !important;
+    background-color: var(--background-quart) !important;
 }
 
 .outer_c0bea0:not(.custom-theme-background){
