@@ -5,7 +5,7 @@ Initial code came from [this thread](https://gist.github.com/n1d3v/0a856d98b9add
 
 # Prerequisities
 This theme was made to suit the following:
-- Theme: Ash
+- Theme: Any Dark Theme (light works as well, but some elements will have colors that make it hard to read and stick out like a sore thumb)
 - UI density: Default
 - Message Display: Default
 
