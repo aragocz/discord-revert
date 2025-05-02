@@ -3,7 +3,7 @@
  * @author aragocz
  * @authorId 428984613935775765
  * @authorLink https://aragocz.com
- * @version 1.4.0
+ * @version 1.4.1
  * @description Revert to old discord theme
  * @source https://github.com/aragocz/discord-revert
  * @website https://github.com/aragocz/discord-revert
@@ -110,6 +110,10 @@ div.micButtonParent__37e49 > div > button.buttonChevron__37e49{
         right: 0px !important;
         border: 0px;
 	    left: auto;
+
+	& > div.panel__5dec7{
+	    background-color: var(--background-darker) !important;
+     	}
 
         & > .container__37e49{
             height: 55px !important;
