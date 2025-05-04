@@ -3,7 +3,7 @@
  * @author aragocz
  * @authorId 428984613935775765
  * @authorLink https://aragocz.com
- * @version 1.4.1
+ * @version 1.4.2
  * @description Revert to old discord theme
  * @source https://github.com/aragocz/discord-revert
  * @website https://github.com/aragocz/discord-revert
@@ -15,16 +15,16 @@
 
 :root {
     /*Feel free to change*/
-    --background-darker: color-mix(in oklab, #1b1c1f, var(--background-base-lowest));
-    --text-lighter: #dcdcdc;
     --message-hover-mixin: rgba(0, 0, 0, 0.13);
     --scrollbar-auto-thumb: var(--background-darker) !important;
     --scrollbar-thin-thumb: var(--background-darker) !important;
     --scrollbar-auto-track: var(--background-base-lowest) !important;
-    --background-quart: var(--bg-overlay-app-frame, color-mix(in oklab, #1f2023, var(--background-base-lowest)));
+    --background-quart: var(--bg-overlay-app-frame, var(--background-darker));
     
     /*Change only if you know what you're doing*/
     --background-message-hover: color-mix(in oklab, var(--background-primary), var(--message-hover-mixin)) !important;
+    --background-darker: color-mix(in oklab, #000 10%, var(--background-base-lowest));
+    --text-lighter: color-mix(in oklab, var(--text-primary), #000 10.5%);
 
     /*Do NOT change, this will mess up sizes*/
     --guildbar-avatar-size: 48px !important;
