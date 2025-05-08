@@ -3,7 +3,7 @@
  * @author aragocz
  * @authorId 428984613935775765
  * @authorLink https://aragocz.com
- * @version 1.4.2
+ * @version 1.4.3
  * @description Revert to old discord theme
  * @source https://github.com/aragocz/discord-revert
  * @website https://github.com/aragocz/discord-revert
@@ -34,14 +34,6 @@
     --custom-guild-list-padding: 10px !important;
 }
 
-.visual-refresh 
-
-.wrapper__44b0c.avatar__37e49 .mask__44b0c.svg__44b0c{
-    padding: 2px 0px 0px 2px;
-    height: 44px;
-    width: 44px;
-}
-
 .text-md\/medium_cf4812{
     font-size: 14px !important;
 }
@@ -60,6 +52,12 @@ div.micButtonParent__37e49 > div > button.buttonChevron__37e49{
 }
 
 .visual-refresh {
+    .wrapper__44b0c.avatar__37e49 .mask__44b0c.svg__44b0c{
+        padding: 2px 0px 0px 2px;
+        height: 44px;
+        width: 44px;
+    }
+
     & .micButtonParent__37e49 > button {
         border-top-right-radius: var(--radius-sm) !important;
         border-bottom-right-radius: var(--radius-sm) !important;
@@ -141,19 +139,7 @@ div.micButtonParent__37e49 > div > button.buttonChevron__37e49{
     font-size: 16px !important;
 }
 
-.folderGroup__48112.isExpanded__48112 {
-    .folderGroupBackground__48112 {
-        border-radius: var(--radius-round);
-    }
-
-    .folderIcon__48112 {
-        border-radius: var(--radius-round);
-
-        > svg {
-            scale: 1.3;
-        }
-    }
-    
+.folderGroup__48112.isExpanded__48112 { 
     foreignObject div.wrapper_cc5dd2 {
         svg.svg_cc5dd2, svg.svg_cc5dd2 > foreignObject, svg.svg_cc5dd2 .folderIcon__48112{
             height: var(--guildbar-avatar-size) !important;
@@ -179,10 +165,6 @@ div.micButtonParent__37e49 > div > button.buttonChevron__37e49{
 
 .content_c48ade > .sidebar_c48ade::after{
     background-color: var(--background-darker) !important;
-}
-
-.unreadMentionsIndicatorTop_ef3116{
-    top: 2%;
 }
 
 div.members_c8ffbb{
@@ -234,22 +216,8 @@ div.members_c8ffbb{
     }
 }
 
-.lowerBadge_cc5dd2 {
-    transform: translate(8px, 8px) !important;
-}
-
-.folderGroup__48112 .folderHeader__48112 .folderButton__48112{
-    .lowerBadge_cc5dd2{
-        transform: none !important;
-    }
-
-    .wrapper_cc5dd2 mask{
-        --badge-offset: 0 !important;
-    }
-}
-
-.upperBadge_cc5dd2 {
-    transform: translate(8px, 0px) !important;
+.folderGroup__48112 .folderHeader__48112 .folderButton__48112:has(.lowerBadge_cc5dd2){
+    border-bottom-right-radius: 0%;
 }
 
 .folderPreviewWrapper__48112 {
@@ -273,5 +241,153 @@ div.members_c8ffbb{
 
     div.closeButton__6e2b9{
         height: 28px;
+    }
+}
+
+
+.shiftSVG_cc5dd2{
+    left: 0px !important;
+    top: 0px !important;
+}
+
+/* The Following is sourced from here: https://scattagain.github.io/VencordStuff/css/GuildbarRevert.css but has to be imported directly due to specificity and whatnot*/
+
+nav[class*="guilds_"] {
+    defs>path {
+        /* #svg-mask-squircle */
+        d: path("M0 0.464C0 0.301585 0 0.220377 0.0316081 0.158343C0.0594114 0.103776 0.103776 0.0594114 0.158343 0.0316081C0.220377 0 0.301585 0 0.464 0H0.536C0.698415 0 0.779623 0 0.841657 0.0316081C0.896224 0.0594114 0.940589 0.103776 0.968392 0.158343C1 0.220377 1 0.301585 1 0.464V0.536C1 0.698415 1 0.779623 0.968392 0.841657C0.940589 0.896224 0.896224 0.940589 0.841657 0.968392C0.779623 1 0.698415 1 0.536 1H0.464C0.301585 1 0.220377 1 0.158343 0.968392C0.103776 0.940589 0.0594114 0.896224 0.0316081 0.841657C0 0.779623 0 0.698415 0 0.536V0.464Z");
+    }
+
+    defs, 
+    [class*="blobContainer_"],
+    [class*="wrapper_"],
+    [class*="listItemWrapper__"],
+    svg[class*="placeholderMask__"],
+    svg:not([class*="placeholderMask__"]) > foreignObject {
+        width: var(--guildbar-avatar-size) !important;
+        height: var(--guildbar-avatar-size) !important;
+    }
+
+    [class*="dragInner__"] {
+        width: 40px;
+        height: 40px;
+    }
+
+    [class*="childWrapper__"]>svg {
+        width: calc(var(--guildbar-avatar-size) - 18px);
+        height: calc(var(--guildbar-avatar-size) - 18px);
+    }
+
+    [class*="childWrapper__"]:not(:has(.container__1ce5d)),
+    [class*="childWrapper__"] img,
+    [class*="icon_"],
+    [class*="circleIconButton__"] {
+        border-radius: 50% !important;
+        transition: border-radius 150ms linear;
+    }
+
+    [class*="selected__"] {
+        [class*="childWrapper__"],
+        [class*="childWrapper__"] img,
+        [class*="icon_"],
+        &[class*="circleIconButton__"] {
+            border-radius: 27% !important;
+        }
+    }
+
+    [class*="shiftSVG_"] {
+        top: 0px;
+        left: 0px;
+
+        foreignObject {
+            transform: translate(-4px, -4px);
+        }
+    }
+
+    mask {
+        --badge-offset: calc(var(--guildbar-avatar-size) - 40px);
+
+        &:not([class*="folderHeader__"] mask) {
+            use[href$="-lower_badge_masks"] {
+                translate: var(--badge-offset) var(--badge-offset);
+            }
+
+            use[href$="-upper_badge_masks"] {
+                translate: var(--badge-offset);
+            }
+        }
+
+        use[href$="-blob_mask"] {
+            scale: var(--blob-scale);
+        }
+    }
+
+    [class*="iconSizeMini_"] {
+        width: calc(var(--guildbar-folder-size) / 3);
+        height: calc(var(--guildbar-folder-size) / 3);
+
+        [class*="acronym_"] {
+            line-height: calc(var(--guildbar-folder-size) / 3);
+        }
+
+        &[style*="font-size: 12px;"] {
+            font-size: 10px !important;
+        }
+        &[style*="font-size: 10px;"] {
+            font-size: 7px !important;
+        }
+        &[style*="font-size: 8px;"] {
+            font-size: 6px !important;
+        }
+    }
+
+    [class*="folderIcon__"] {
+        svg {
+            width: 24px !important;
+            height: 24px !important;
+        }
+        
+        background-color: var(--bg-mod-subtle);
+    }
+
+    [class*="closedFolderIconWrapper__"] {
+        gap: initial;
+    }
+
+    [class*="listItem__"] {
+        margin-bottom: 8px;
+        height: min-content;
+    }
+
+    [class*="stack_"] {
+        gap: 0 !important;
+    }
+
+    #guild-list-unread-dms {
+        margin-top: 0 !important;
+        > div {
+            height: var(--guildbar-avatar-size) !important;
+            margin-bottom: 8px;
+        }
+    }
+
+    [class*="isExpanded__"] {
+        [class*="folderGroupBackground__"] {
+            border-bottom-left-radius: 24px;
+            border-bottom-right-radius: 24px;
+        }
+
+        [class*="stack_"] {
+            height: auto !important;
+            :last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        margin-bottom: 8px;
+    }
+
+    [id^="folder-items-"] {
+        --guildbar-avatar-size: var(--guildbar-folder-size) !important;
     }
 }
